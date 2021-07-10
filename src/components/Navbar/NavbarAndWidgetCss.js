@@ -35,14 +35,17 @@ export const ButonLogIn = styled.button`
 
 //--Widget--
 export const DIVH3 = styled.div`
-    background-color: black;
-    border-radius: 40px;
-    height: 26px;
+    @media (max-width: 992px){
+        margin-top: 7px;
+    }
+    background-color: #32c421;
+    border-radius: 10px;
+    height: 27px;
     width: 27px;
     p{
         color: white;
         font-size: 1.15rem;
-        margin-left:0.6rem;
+        padding-left:0.55rem;
         font-weight: 500;
     }
 `

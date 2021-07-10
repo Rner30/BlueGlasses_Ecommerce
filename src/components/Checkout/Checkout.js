@@ -38,15 +38,18 @@ const Checkout = () => {
 
 		const db = getFirestore();
 		const OrderCollection = db.collection("orders");
-		OrderCollection.add(datosCompra)
-			.then(({ id }) => {
-				clearCart();
-				setOrderId(id);
-			})
-			.catch((err) => {
-				console.log(err);
-			})
-			.finally(console.log(datosCompra));
+		
+		const ordenes = async () => {
+			try {
+				const pregunta = await OrderCollection.add(datosCompra)
+				const respuesta =  pregunta.id
+				clearCart()
+				setOrderId(respuesta)
+			} catch (error) {
+				console.log(error);
+			}
+		}
+		ordenes()
 	};
 
 	return (
@@ -60,6 +63,7 @@ const Checkout = () => {
 								<p className="fs-4">
 									Tu numero de orden es: <strong>{orderId}</strong>{" "}
 								</p>
+								<p className="fs-4">En la brevedad te vamos a contactar 😄</p>
 							</DivOrden>
 						</>
 					) : (

@@ -1,9 +1,6 @@
 import { useState, Fragment } from "react";
 import styled from "styled-components";
 import { IoCartSharp } from "react-icons/io5";
-const Cantidad = styled.span`
-	padding: 1rem;
-`;
 
 export default function ItemCount({ stock, initial, onAdd }) {
 	const [contador, setContador] = useState(initial);
@@ -41,3 +38,8 @@ export default function ItemCount({ stock, initial, onAdd }) {
 		</Fragment>
 	);
 }
+
+
+const Cantidad = styled.span`
+	padding: 1rem;
+`;

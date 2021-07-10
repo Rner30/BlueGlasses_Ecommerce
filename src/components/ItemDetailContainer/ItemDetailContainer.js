@@ -1,42 +1,36 @@
-import React,{useEffect, useState} from 'react'
-import ItemDetails from '../ItemDetails/ItemDetails'
+import React, { useEffect, useState } from "react";
+import ItemDetails from "../ItemDetails/ItemDetails";
 
-import { useParams } from 'react-router'
-import { getFirestore } from '../../firebase';
+import { useParams } from "react-router";
+import { getFirestore } from "../../firebase";
 
 const ItemDetailContainer = () => {
-    
+	const { id } = useParams();
 
-    const {id} = useParams()
-    
-    const [item, setItem] = useState()
-    
-    useEffect(()=>{
+	const [item, setItem] = useState();
 
-        const db = getFirestore()
-        const itemsColecction = db.collection("items")
+	useEffect(() => {
+		const db = getFirestore();
+		const itemsColecction = db.collection("items");
+
+		const itemsProductos = async () => {
+			try {
+				const obtenerItems = await itemsColecction.doc(id).get();
+				const respuesta = obtenerItems.data();
+				setItem(respuesta);
+			} catch (error) {
+				console.log(error);
+			}
+		};
         
-        itemsColecction.doc(id).get()
-            
-            .then(doc => {
+		itemsProductos();
+	}, [id]);
 
-                if(doc.exists) {
-                    setItem(doc.data());
-                }
-            })
+	return (
+		<>
+			<div>{item ? <ItemDetails item={item} /> : null}</div>
+		</>
+	);
+};
 
-            .catch((err) => {
-                console.log(err)
-            })
-    },[])
-    
-    return (    
-        <>
-            <div>
-                {item ? <ItemDetails item={item} />: null}
-            </div> 
-        </>
-    )
-}
-
-export default ItemDetailContainer
+export default ItemDetailContainer;

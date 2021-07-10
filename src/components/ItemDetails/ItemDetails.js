@@ -47,8 +47,8 @@ const ItemDetail = ({ item }) => {
 						calidad, fabricado con los materiales más reconocidos en la
 						Industria del Anteojo.
 					</p>
-                    <p>
-                        <ul>
+                    
+                        <ul className="list-unstyled"> 
                             <li>✅Protección contra LUZ AZUL-VIOLETA</li>
                             <li>✅Reduce el Stress Visual</li>
                             <li>✅Ayuda a descansar mejor</li>
@@ -56,7 +56,7 @@ const ItemDetail = ({ item }) => {
                             <li>✅Reducción de reflejos</li>
                             <li>✅Mayor resistencia a rayas</li>
                         </ul>
-                    </p>
+                    
 					<p>Precio: ${item.precio}</p>
 					<ItemCount stock={item.stock} initial={1} onAdd={handleAddProduct}/>
 				</div>

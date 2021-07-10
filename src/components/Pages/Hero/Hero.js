@@ -23,8 +23,6 @@ export default Hero
 
 
 const DIV = styled.div`
-    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-    font-family: 'Poppins', sans-serif;
     background: url(${chicaAnteojos});
     height: 60vh;
     h1{

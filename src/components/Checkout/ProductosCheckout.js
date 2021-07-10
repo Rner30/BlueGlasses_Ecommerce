@@ -7,7 +7,7 @@ const ProductosCheckout = () => {
 	return (
         <>
         {cart.map((product,i)=>(
-            <ul className="list-group mb-3">
+            <ul className="list-group mb-3" key={i}>
             <li className="list-group-item d-flex justify-content-between lh-sm">
               <div>
                 <h6 className="my-0 fs-5">{product.item.nombre}</h6>
