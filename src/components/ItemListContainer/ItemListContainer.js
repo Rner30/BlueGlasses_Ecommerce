@@ -11,15 +11,14 @@ export default function ItemListContainer() {
 			try {
 				let arr = [];
 				const pregunta = await db.collection("items").get();
-					pregunta.forEach((doc) => {
-						arr.push({ id: doc.id, data: doc.data() });
-					});
+				pregunta.forEach((doc) => {
+					arr.push({ id: doc.id, data: doc.data() });
+				});
 				setproducts(arr);
 			} catch (error) {
 				console.log(error);
 			}
 		};
-		
 		GetItems();
 	}, [db]);
 

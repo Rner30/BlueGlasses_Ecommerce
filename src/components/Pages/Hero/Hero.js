@@ -24,6 +24,7 @@ export default Hero
 
 const DIV = styled.div`
     background: url(${chicaAnteojos});
+    background-size: cover;
     height: 60vh;
     h1{
         font-size: 3rem;    
@@ -35,7 +36,13 @@ const DIV = styled.div`
         padding-top: 13rem;
         padding-left: 25rem;
     }
-    @media screen and (max-width: 700px){
+    @media (max-width: 1400px){
+        .descript{
+            padding-top: 10rem;
+            padding-left: 10rem;
+        } 
+    }
+    @media (max-width: 700px){
         background: url(${chicaAnteojosMobile});
         background-size:cover;
         font-weight: bold;

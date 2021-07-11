@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Nav = styled.nav`
     font-size: 1.3em;
+    
     @media (min-width: 992px) {
         height: 3.5rem;
         .icon__margin {
@@ -12,7 +13,8 @@ export const Nav = styled.nav`
         font-weight: 600;
         }   
     }
-    @media (max-width: 992px){
+    
+    @media (max-width: 400px){
         .cuotas{
             display:none;
         }
@@ -29,6 +31,13 @@ export const IMG = styled.img`
 export const ButonLogIn = styled.button`
     @media (min-width: 992px){
         margin-left: 8rem;
+        
+    }
+    @media (max-width: 1400px){
+        width: 10.8rem;
+        
+        display: flex;
+        height: 2rem;
     }
     
 `
