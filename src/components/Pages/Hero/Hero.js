@@ -44,7 +44,6 @@ const DIV = styled.div`
     }
     @media (max-width: 700px){
         background: url(${chicaAnteojosMobile});
-        background-size:cover;
         font-weight: bold;
         .descript{
             padding: 16rem 1rem 1rem 1rem;

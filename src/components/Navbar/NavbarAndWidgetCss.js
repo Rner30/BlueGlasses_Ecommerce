@@ -14,7 +14,7 @@ export const Nav = styled.nav`
         }   
     }
     
-    @media (max-width: 400px){
+    @media (max-width: 700px){
         .cuotas{
             display:none;
         }
@@ -35,7 +35,7 @@ export const ButonLogIn = styled.button`
     }
     @media (max-width: 1400px){
         width: 10.8rem;
-        
+        padding-bottom: 2rem;
         display: flex;
         height: 2rem;
     }
