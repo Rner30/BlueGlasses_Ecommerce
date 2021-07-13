@@ -1,6 +1,6 @@
 import React from 'react'
-import chicaAnteojos from '../../../img/Bluth_HomeBanner1.jpg'
-import chicaAnteojosMobile from '../../../img/Bluth_ImgSliderMobile1.jpg'
+import chicaAnteojos from '../../../img/Bluth_HomeBanner1-min.jpg'
+import chicaAnteojosMobile from '../../../img/Bluth_ImgSliderMobile1-min.jpg'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
@@ -42,8 +42,10 @@ const DIV = styled.div`
             padding-left: 10rem;
         } 
     }
+    
     @media (max-width: 700px){
         background: url(${chicaAnteojosMobile});
+        background-size: cover;
         font-weight: bold;
         .descript{
             padding: 16rem 1rem 1rem 1rem;
@@ -54,6 +56,11 @@ const DIV = styled.div`
         }
         p{
             font-size: 1.15rem;
+        }
+    }
+    @media (max-width: 400px){
+        .descript{
+            padding: 12rem 1rem 1rem 1rem;
         }
     }
 `

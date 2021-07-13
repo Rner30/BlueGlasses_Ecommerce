@@ -2,7 +2,10 @@ import styled from "styled-components";
 
 export const Nav = styled.nav`
     font-size: 1.3em;
-    
+    a{
+        text-decoration: none;
+        font-weight: 600;
+    }
     @media (min-width: 992px) {
         height: 3.5rem;
         .icon__margin {
@@ -19,10 +22,7 @@ export const Nav = styled.nav`
             display:none;
         }
     }
-    a{
-        text-decoration: none;
-        font-weight: 600;
-    }
+    
     
 `;
 export const IMG = styled.img`
