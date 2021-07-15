@@ -58,9 +58,9 @@ const DIV = styled.div`
             font-size: 1.15rem;
         }
     }
-    @media (max-width: 400px){
+    @media (max-width: 360px){
         .descript{
-            padding: 12rem 1rem 1rem 1rem;
+            padding: 7rem 1rem 1rem 1rem;
         }
     }
 `
