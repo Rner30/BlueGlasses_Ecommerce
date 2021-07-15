@@ -49,7 +49,7 @@ const Navbar = () => {
 							</NavLink>
 						</li>
 					</ul>
-					<p className="fs-6 ms-5 cuotas mt-3">
+					<p className="ms-5 cuotas mt-3">
 						3, 6 Y 12 CUOTAS SIN INTERÉS + ENVÍO GRATIS
 					</p>
 

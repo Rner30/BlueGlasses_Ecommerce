@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ItemCount from "../ItemCount/ItemCount";
 import {useCartContext} from '../../context/context';
-import Spinner from "../Spinner/Spinner";
+
 const DIV = styled.div`
 	margin-top: 18%;
 `;
@@ -23,9 +23,8 @@ const ItemDetail = ({ item }) => {
     }
 	return (
 		<div className="container ">
-			{item ? null : <Spinner/> }
 			<div className="row">
-				<DIV className="col-lg-6">
+				<DIV className="col-lg-6" >
 					<img src={item.picture} alt={item.titulo} className="img-fluid" />
 				</DIV>
 				<div className="col-lg-6 fs-5">

@@ -5,6 +5,7 @@ export const Nav = styled.nav`
     a{
         text-decoration: none;
         font-weight: 600;
+        
     }
     @media (min-width: 992px) {
         height: 3.5rem;
@@ -12,8 +13,9 @@ export const Nav = styled.nav`
             margin-bottom: 3px;
         }
         .cuotas{
-        margin-top: 0.8rem;
-        font-weight: 600;
+            margin-top: 0.8rem;
+            font-weight: 500;
+            font-size: 0.9rem;
         }   
     }
     

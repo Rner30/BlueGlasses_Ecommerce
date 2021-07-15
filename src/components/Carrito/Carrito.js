@@ -41,8 +41,9 @@ const Carrito = () => {
 									onClick={() =>
 										removeItem(
 											product.item.id,
-											product.item.precio,
+											precioTotal,
 											product.cantidad
+											
 										)
 									}
 									className="btn btn-danger bg-danger"
