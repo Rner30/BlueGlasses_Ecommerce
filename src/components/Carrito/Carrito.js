@@ -1,7 +1,8 @@
 import React from "react";
 import { useCartContext } from "../../context/context";
 import {Link} from 'react-router-dom';
-import {DivImg,DIV} from './CarritoCss'
+import {DivImg,DIV,DivRounded} from './CarritoCss'
+import accounting from "accounting";
 
 
 const Carrito = () => {
@@ -14,13 +15,13 @@ const Carrito = () => {
 		</DivImg>
 		<DIV className="container">
 			<div className="row">
-				<div className="col-lg-9">
+				<DivRounded className="col-lg-8 shadow-lg pt-3 ms-auto">
 					{precioTotal === 0 ? (
 						<h2 className="text-center">Agrega productos al carrito!</h2>
 					) : null}
 
 					{cart.map((product, i) => (
-						<div className="row" key={i}>
+						<div className="row mt-3" key={i}>
 							<div className="col-lg-2">
 								<img src={product.item.picture} alt="" className="img-fluid" />
 							</div>
@@ -51,22 +52,22 @@ const Carrito = () => {
 									X
 								</button>
 							</div>
-							<hr />
+							
 						</div>
 					))}
 					
-				</div>
-				<div className="col-lg-3">
+				</DivRounded>
+				<DivRounded className="col-lg-3 shadow-lg ms-auto pt-4">
 					{cart.length > 0 && (
 						<>
-							<h3>Total a pagar: ${precioTotal}</h3>
+							<h3>Total a pagar: {accounting.formatMoney(precioTotal)}</h3>
 							<Link to="/checkout" className="btn btn-success d-block w-100 mt-4">Ir a finalizar Compra</Link>
 							<button className="btn btn-primary mt-5 " onClick={clearCart}>
 								Vaciar carrito
 							</button>
 						</>
 					)}
-				</div>
+				</DivRounded>
 			</div>
 		</DIV>
 		</>

@@ -16,3 +16,7 @@ export const DIV = styled.div`
 	margin-top: 3%;
 	font-family: 'Source Sans Pro', sans-serif;
 `;
+
+export const DivRounded = styled.div`
+	border-radius: 30px;
+`

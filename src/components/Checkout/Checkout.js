@@ -7,6 +7,8 @@ import styled from "styled-components";
 import ProductosCheckout from "./ProductosCheckout";
 import Formcheckout from "./Formcheckout";
 import { FcGoogle } from "react-icons/fc";
+import accounting from "accounting";
+import { MarginForm } from "./Checkoutcss";
 
 const DivCheckout = styled.div`
 	font-family: "Source Sans Pro", sans-serif;
@@ -77,14 +79,14 @@ const Checkout = () => {
 								telefono={telefono}
 								email={email}
 							/>
-							<div className="col-lg-3 mt-5">
+							<MarginForm className="col-lg-4 shadow-lg p-3  ms-2 bg-body">
 								<h3>Tu carrito:</h3>
 								<ProductosCheckout cart={cart} />
 								<h5>Envío Gratis</h5>
 								{precioTotal ? (
-									<h4>El precio total es: ${precioTotal}</h4>
+									<h4>Subtotal: {accounting.formatMoney(precioTotal)}</h4>
 								) : null}
-							</div>
+							</MarginForm>
 						</>
 					)
 				) : (

@@ -1,14 +1,16 @@
 import React from "react";
-
+import {MarginForm,Formulario} from './Checkoutcss'
+import { useCartContext } from "../../context/context";
+import accounting from "accounting";
 const Formcheckout = ({manejarCompra,setNombre,setTelefono,setEmail,nombre,telefono,email}) => {
+	const {precioTotal} = useCartContext()
 	return (
-		<div className="col-lg-8 mt-5">
+		<MarginForm className="col-lg-7 shadow-lg p-3  bg-body ">
 			<div>
-				<h3>Checkout</h3>
-
-				<form onSubmit={manejarCompra}>
+				<Formulario onSubmit={manejarCompra}>
+					<h3>Informacion de compra</h3>
 					<div>
-						<label htmlFor="nombre" className="fs-4">
+						<label htmlFor="nombre" className="fs-5">
 							Nombre y apellido
 						</label>
 						<input
@@ -19,11 +21,11 @@ const Formcheckout = ({manejarCompra,setNombre,setTelefono,setEmail,nombre,telef
 							type="text"
 							required
 							className="form-control"
-							placeholder="Nombre y Apellido"
+							
 						/>
 					</div>
 					<div>
-						<label htmlFor="telefono" className="fs-4">
+						<label htmlFor="telefono" className="fs-5">
 							Telefono
 						</label>
 						<input
@@ -34,11 +36,11 @@ const Formcheckout = ({manejarCompra,setNombre,setTelefono,setEmail,nombre,telef
 							type="text"
 							required
 							className="form-control"
-							placeholder="1112345678"
+							
 						/>
 					</div>
 					<div>
-						<label htmlFor="email" className="fs-4">
+						<label htmlFor="email" className="fs-5">
 							Correo Electrónico:
 						</label>
 						<input
@@ -49,17 +51,17 @@ const Formcheckout = ({manejarCompra,setNombre,setTelefono,setEmail,nombre,telef
 							type="email"
 							required
 							className="form-control"
-							placeholder="email@email.com"
+							
 						/>
 					</div>
-					<div className="d-flex mt-4">
-						<button type="submit" className="btn btn-success btn-lg ms-auto ">
-							Finalizar compra
+					<div className="d-flex mt-3">
+						<button type="submit" className="btn btn-primary btn-lg d-block w-100 ">
+							Pagar {accounting.formatMoney(precioTotal)}
 						</button>
 					</div>
-				</form>
+				</Formulario>
 			</div>
-		</div>
+		</MarginForm>
 	);
 };
 

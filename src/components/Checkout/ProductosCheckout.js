@@ -11,9 +11,9 @@ const ProductosCheckout = () => {
             <li className="list-group-item d-flex justify-content-between lh-sm">
               <div>
                 <h6 className="my-0 fs-5">{product.item.nombre}</h6>
-                <small className="">Cantidad: {product.cantidad}</small>
+                <small >Cantidad: {product.cantidad}</small>
               </div>
-              <span className="">${product.item.precio * product.cantidad}</span>
+              <p className="fs-5">${product.item.precio * product.cantidad}</p>
             </li>
           </ul>
         ))}
