@@ -9,7 +9,7 @@ import {
 const Footer = () => {
 	return (
 		<div>
-			<footer className="text-center text-lg-start bg-light">
+			<footer className="text-center text-lg-start bg-dark text-white">
 				<SectionFooter>
 					<div className="container text-center text-md-start mt-5">
 						<div className="row mt-3">
