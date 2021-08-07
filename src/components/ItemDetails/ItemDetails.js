@@ -54,7 +54,7 @@ const ItemDetail = ({ item }) => {
                             <li>✅Mayor resistencia a rayas</li>
                         </ul>
                     
-					<h5>Precio: ${item.precio}</h5>
+					<h4>Precio: ${item.precio}</h4>
 					<h5>Stock: {item.stock}</h5>
 					{
 						item.stock >= 1 ? <ItemCount stock={item.stock} initial={1} onAdd={handleAddProduct}/> : null
