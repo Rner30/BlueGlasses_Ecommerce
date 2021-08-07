@@ -30,7 +30,7 @@ function App() {
 					</Route>
 					<Route path="/ItemsDetailContainer/:id">
 						<ItemDetailContainer />
-						<Footer/>
+						
 					</Route>
 					
 						<Route path="/negros">

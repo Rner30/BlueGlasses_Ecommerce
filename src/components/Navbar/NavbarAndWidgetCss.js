@@ -49,7 +49,7 @@ export const DIVH3 = styled.div`
     @media (max-width: 992px){
         margin-top: 7px;
     }
-    background-color: #32c421;
+    background-color: black;
     border-radius: 10px;
     height: 27px;
     width: 27px;

@@ -62,7 +62,7 @@ const Carrito = () => {
 						<>
 							<h3>Total a pagar: {accounting.formatMoney(precioTotal)}</h3>
 							<Link to="/checkout" className="btn btn-success d-block w-100 mt-4">Ir a finalizar Compra</Link>
-							<button className="btn btn-primary mt-5 " onClick={clearCart}>
+							<button className="btn btn-primary btn-sm mt-3 mb-3" onClick={clearCart}>
 								Vaciar carrito
 							</button>
 						</>
