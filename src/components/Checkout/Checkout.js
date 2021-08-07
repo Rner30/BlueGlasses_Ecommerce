@@ -40,18 +40,37 @@ const Checkout = () => {
 
 		const db = getFirestore();
 		const OrderCollection = db.collection("orders");
-		
+
 		const ordenes = async () => {
 			try {
-				const pregunta = await OrderCollection.add(datosCompra)
-				const respuesta =  pregunta.id
-				clearCart()
-				setOrderId(respuesta)
+				const pregunta = await OrderCollection.add(datosCompra);
+				const respuesta = pregunta.id;
+				clearCart();
+				setOrderId(respuesta);
 			} catch (error) {
 				console.log(error);
 			}
-		}
-		ordenes()
+		};
+		ordenes();
+
+		const itemsUpdate = db.collection("items").where(
+			firebase.firestore.FieldPath.documentId(),
+			"in",
+			cart.map((i) => i.item.id)
+		);
+
+		const updateStock = async () => {
+			const query = await itemsUpdate.get();
+			const batch = db.batch();
+			query.docs.forEach((docSnapshot, idx) => {
+				batch.update(docSnapshot.ref, {
+					stock: docSnapshot.data().stock - Number(cart[idx].cantidad),
+				});
+			});
+			batch.commit();
+		};
+
+		updateStock();
 	};
 
 	return (

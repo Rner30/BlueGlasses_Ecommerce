@@ -18,8 +18,6 @@ const ItemDetail = ({ item }) => {
             cantidad: qty,
             item,
         }, qty)
-
-        
     }
 	return (
 		<div className="container ">
@@ -56,8 +54,12 @@ const ItemDetail = ({ item }) => {
                             <li>✅Mayor resistencia a rayas</li>
                         </ul>
                     
-					<p>Precio: ${item.precio}</p>
-					<ItemCount stock={item.stock} initial={1} onAdd={handleAddProduct}/>
+					<h5>Precio: ${item.precio}</h5>
+					<h5>Stock: {item.stock}</h5>
+					{
+						item.stock >= 1 ? <ItemCount stock={item.stock} initial={1} onAdd={handleAddProduct}/> : null
+					}
+					
 				</div>
 			</div>
 		</div>
